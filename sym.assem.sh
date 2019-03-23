@@ -3,7 +3,6 @@
 
 #/usr/local/src/cdhit/cd-hit-est -i Sym_COIDB2.fasta -c 1 -o Sym_COIDB.final.fasta
 
-
 for sample in `ls /media/RAID/james/Staghorn_GeneExpression/Ex_Situ/*R1_Combined.fq`
 do
 dir="/media/RAID/james/Staghorn_GeneExpression/Ex_Situ/"
@@ -18,8 +17,6 @@ base=$(basename $sample ".sam")
 samtools view -bS ${dir}/${base}.sam >${dir}/${base}.bam
 done 
 
-
-
 for sample in `ls /media/RAID/james/Staghorn_GeneExpression/Ex_Situ/Sym_Cladistics/*.bam`
 do
 dir="/media/RAID/james/Staghorn_GeneExpression/Ex_Situ/Sym_Cladistics/"
@@ -33,6 +30,3 @@ dir="/media/RAID/james/Staghorn_GeneExpression/Ex_Situ/Sym_Cladistics/"
 base=$(basename $sample ".COI.fq")
 nice -n 6 Trinity --seqType fq --single ${dir}/${base}.COI.fq --max_memory 100G --CPU 40 --output ${dir}/${base}.trinityout
 done
-
-
-
