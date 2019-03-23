@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #THIS SPLITS A LARGE  FILE INTO 1 FILE PER SEQUENCE
 # awk '/^>/ {if(x>0) close(outname); x++; outname=sprintf("_%d.fa",x); print > outname;next;} {if(x>0) print >> outname;}' *.fasta
 
