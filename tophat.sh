@@ -1,6 +1,3 @@
-
-
-
 #for sample in `ls ./*R1_Combined.fq`
 #do
 #	outdir=`echo ${sample/_R1_Combined.fq/}`
